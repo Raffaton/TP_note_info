@@ -15,9 +15,39 @@ void afficher_grille(int taille, int grille[9][9])
 {
     for (int i = 0; i < taille; i++)
     {
+        if (i > 0)
+        {
+            for (int k = 0; k < taille; k++)
+            {
+                printf("- ");
+            }
+        }
+        printf("\n");
         for (int j = 0; j < taille; j++)
         {
-            printf("%d ", grille[i][j]);
+            if (grille[i][j] != 0)
+            {
+                if(j < taille-1)
+                {
+                    printf("%d|", grille[i][j]);
+                }
+                else
+                {
+                    printf("%d", grille[i][j]);
+                }
+                
+            }
+            else
+            {
+                if(j < taille -1 )
+                {
+                    printf(" |");
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
         }
         printf("\n");
     }
