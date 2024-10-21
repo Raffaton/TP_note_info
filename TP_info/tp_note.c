@@ -108,9 +108,14 @@ void remplissage_auto(int niveau, int grille[9][9], int taille) {
         int nombre = rand() % taille + 1; 
 
         if (modifier_grille(ligne, colonne, grille, nombre, taille) == 0) {
-            i--; 
+            i -= 1; 
         }
     }
+}
+
+void resolution_tableau(int grille[9][9])
+{
+    // resolution
 }
 
 int main() {
@@ -118,6 +123,7 @@ int main() {
     int grille[9][9];
     int envie = 1;
     int choix;
+    int choix_resolution;
     int niveau;
 
     while (taille < 1 || taille > 9) { 
@@ -133,7 +139,7 @@ int main() {
 
     if (choix == 1) {
         while (1) {
-            printf("Voulez-vous changer une valeur de tableau (0 pour NON / 1 pour OUI) : ");
+            printf("Voulez-vous ajouter une valeur au tableau (0 pour NON / 1 pour OUI) : ");
             scanf("%d", &envie);
 
             if (envie == 1) {
@@ -151,12 +157,22 @@ int main() {
                 break;
             }
         }
-    } else {
+    } 
+    else 
+    {
         printf("Quel niveau voulez-vous (1, 2 ou 3) ? ");
         scanf("%d", &niveau);
         remplissage_auto(niveau, grille, taille);
         printf("\nGrille apres remplissage automatique :\n");
         afficher_grille(taille, grille);
+    }
+
+    printf("Voulez-vous resoudre ce tableau (0 pour NON / 1 pour OUI) ? ");
+    scanf("%d", &choix_resolution);
+
+    if (choix_resolution == 1)
+    {
+        resolution_tableau(grille);
     }
 
     return 0;
