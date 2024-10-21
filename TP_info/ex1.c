@@ -29,7 +29,7 @@ int main()
     int grille[9][9];
     while (taille > 9)
     {
-        printf("Quel est la taille du carre ? ");
+        printf("Quel est la taille du carre999999999999999999 ? ");
         scanf("%d", &taille);
     }
     creer_grille(taille, grille);
